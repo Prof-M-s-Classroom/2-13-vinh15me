@@ -121,11 +121,15 @@ public:
    void reverselist(){
         //TODO:Write a function to reverse the list using the logic from the slide.
         Node<T>* temp = head;
-        Node<T>* prev;
-        while (temp->next != NULL) {
+        Node<T>* prev = nullptr;
+        Node<T>* next = temp->next;
+        while (temp != NULL) {
+            next = temp->next;
+            temp->next = prev;
             prev = temp;
-            temp = temp->next;
+            temp = next;
         }
+        head = prev;
 
     }
 
@@ -158,7 +162,9 @@ int main() {
     ll->addhead(s3);
     ll->insert(1,s4);
     ll->print();
-    ll->deleteNode(1);
+    //ll->deleteNode(1);
     //ll->delfirst();
+    ll->print();
+    ll->reverselist();
     ll->print();
 }
