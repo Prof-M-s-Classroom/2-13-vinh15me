@@ -69,7 +69,6 @@ public:
         delete temp;
         length--;
     }
-
     Node<T>* get(int index) {
         if (index < 0 || index >= length) {
             return nullptr;
@@ -162,8 +161,7 @@ int main() {
     ll->addhead(s3);
     ll->insert(1,s4);
     ll->print();
-    //ll->deleteNode(1);
-    //ll->delfirst();
+    ll->deleteNode(1);
     ll->print();
     ll->reverselist();
     ll->print();
